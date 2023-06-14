@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/rel_top_main"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:lottie_rawRes="@raw/phone_splash"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rel_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rel_top_main"
+        android:background="@drawable/shape_relativelayout_main"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:id="@+id/btn_buy_charge"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:background="@drawable/shape_rel_category"
+                android:gravity="center_horizontal"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/charge"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:text="خرید شارژ"
+                    >
+
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <LinearLayout
+                android:id="@+id/btn_check_charge"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:background="@drawable/shape_rel_category"
+                android:gravity="center_horizontal"
+                >
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/check"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#000"
+                    android:text="قبض تلفن"
+                    >
+
+                </TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
